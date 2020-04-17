@@ -1,17 +1,19 @@
 import json
 import random
 import os
+import sys
+
 if __name__ == '__main__':
-    count=random.randrange(1,5)
-    time=random.randrange(1,5)
-    cus_rep=random.randrange(-5,5)
-    col_rep=random.randrange(-5,5)
-    f = open('plot.json')
+    count=random.randrange(3,5)
+    time=random.randrange(4,6)
+    cus_rep=random.randrange(0,5)
+    col_rep=random.randrange(0,5)
+    f = open('plot.json','r', encoding='utf-8')
     file_content = f.read()
     current = json.loads(file_content)
     while(current['isnt_last']):
         os.system('cls')
-        print('Количество разработчиков: ', count, '\n', 'Время на разработку: ',time,'\n','Репутация у заказчика',cus_rep,'\n','Репутация у коллег',col_rep, sep='')
+        print('Количество разработчиков: ', count, '\n', 'Время на разработку: ',time,'\n','Репутация у  заказчика:',cus_rep,'\n','Репутация у коллег: ',col_rep, sep='')
         print(current['text'])
         answ=int(input())
         chance=random.randrange(0,100)
